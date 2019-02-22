@@ -1,12 +1,11 @@
+FROM oraclelinux:7-slim
+
+
 # Maintain correct lables in the Dockerfile.
 LABEL maintainer="louwersj@gmail.com"
 LABEL version="0.1"
 LABEL description="Flask example application serving a profile service"
 LABEL source="https://github.com/louwersj/flask_Example_profileService"
-
-
-# based the image on the Oracle Linux 7-slim base image.
-FROM oraclelinux:7-slim
 
 
 # Install a number of packages from the Oracle YUM repository.
