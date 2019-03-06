@@ -17,6 +17,10 @@ RUN yum install -y oracle-epel-release-el7 oracle-release-el7 && \
     yum install -y python-pip &&\
     yum install -y python-wheel
 
+
+# make sure we do clean up all the yum cache to keep size down
+RUN yum clean all
+
 # Ensure we have the latest version of pip installed
 RUN pip install --upgrade pip
 
