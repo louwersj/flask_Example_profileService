@@ -17,6 +17,8 @@ RUN yum install -y oracle-epel-release-el7 oracle-release-el7 && \
     yum install -y python-pip &&\
     yum install -y python-wheel
 
+# Ensure we have the latest version of pip installed
+RUN pip install --upgrade pip
 
 # Copy just the requirements.txt and change the working directory to
 # /app to run the pip install for python requirements.
