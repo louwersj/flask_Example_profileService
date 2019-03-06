@@ -13,7 +13,9 @@ RUN yum install -y oracle-epel-release-el7 oracle-release-el7 && \
     /usr/bin/ol_yum_configure.sh &&\
     yum update -y &&\
     yum install -y python36 &&\
-    yum install -y python-setuptools
+    yum install -y python-setuptools &&\
+    yum install -y python-pip &&\
+    yum install -y python-wheel
 
 
 # Copy just the requirements.txt and change the working directory to
