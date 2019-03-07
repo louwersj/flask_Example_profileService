@@ -2,10 +2,10 @@ FROM oraclelinux:7-slim
 
 
 # Maintain correct lables in the Dockerfile.
-LABEL maintainer="louwersj@gmail.com"
-LABEL version="0.1"
-LABEL description="Flask example application serving a profile service"
-LABEL source="https://github.com/louwersj/flask_Example_profileService"
+LABEL maintainer="louwersj@gmail.com" \
+      version="0.1" \
+      description="Flask example application serving a profile service" \
+      source="https://github.com/louwersj/flask_Example_profileService"
 
 
 # Install a number of packages from the Oracle YUM repository.
