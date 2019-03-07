@@ -8,10 +8,6 @@ LABEL maintainer="louwersj@gmail.com" \
       source="https://github.com/louwersj/flask_Example_profileService"
 
 
-# copy the content of ./application to /app and change working dir to /app
-COPY ./application/* /app/
-WORKDIR /app
-
 # Install a number of packages from the Oracle YUM repository and clean the YUM cache.
 # Additionally; upgrade pip and install requirements based upon requirements.txt
 RUN yum install -y oracle-epel-release-el7 oracle-release-el7 && \
@@ -20,13 +16,13 @@ RUN yum install -y oracle-epel-release-el7 oracle-release-el7 && \
     yum install -y python36 python-setuptools python-pip python-wheel &&\
     yum clean all
 
-
-# Ensure we have the latest version of pip installed and install requirements
+# Copy the ./application into the /app directory and move to the /app workdir. Than
+# ensure we have the latest version of pip installed and  install requirements based
+# upon the information in the requirements.txt file.
+COPY ./application/* /app/
+WORKDIR /app
 RUN pip install --upgrade pip &&\
     pip install -r requirements.txt
-
-
-
 
 
 # set the ENTRYPOINT to the python command and start app.py
