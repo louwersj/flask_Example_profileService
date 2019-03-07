@@ -20,9 +20,10 @@ RUN yum install -y oracle-epel-release-el7 oracle-release-el7 && \
 # ensure we have the latest version of pip installed and  install requirements based
 # upon the information in the requirements.txt file.
 COPY ./application/* /app/
+COPY ./requirements.txt /app/requirements.txt
 WORKDIR /app
 RUN pip install --upgrade pip &&\
-    pip install -r requirements.txt
+    pip install -r /app/requirements.txt
 
 
 # set the ENTRYPOINT to the python command and start app.py
