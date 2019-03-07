@@ -4,7 +4,6 @@ from flask import send_from_directory
 
 app = Flask(__name__)
 
-
 # add a route for / as the root of the application
 @app.route('/', methods=['GET'])
 def getRoot():
